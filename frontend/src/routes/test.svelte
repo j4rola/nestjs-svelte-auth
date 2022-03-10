@@ -4,6 +4,8 @@
 
     const url = 'http://localhost:8080'   
 
+    const registerUrl = url + '/register'
+
     async function get() {
 
         let data = await axios.get(url)
@@ -14,7 +16,7 @@
 
     async function post() {
 
-        let data = await axios.post(url)
+        let data = await axios.post(registerUrl)
 
         console.log(data)
 
