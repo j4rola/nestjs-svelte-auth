@@ -15,10 +15,13 @@ export const UserSchema = new mongoose.Schema({
 
 export interface User {     
 
-    id: string,
-    firstName: string, 
+    id: string,         
+    firstName: string,  
     lastName: string,   
-    email: string,   
+    email: {
+        type: String,
+        required: [true, "Please add a value for email"],
+        unique: true }     
     password: string,   
     
 }

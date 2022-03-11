@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Req } from '@nestjs/common';
 import { RegisterService } from 'src/services/registerService';
+import { Request } from 'express';
 
 @Controller('register')
 export class RegisterController {
@@ -13,14 +14,12 @@ export class RegisterController {
      return 'test';   
     }
 
-  @Post() 
-  registerUser() {
+   @Post() 
+   registerUser(@Req() req: Request)  {   
 
-    const args = {firstName: "John", lastName: "Test", email: "jtest@gmail.com", password: "password"} 
-
-    const {firstName, lastName, email, password} = args 
+     
     
-    this.registerService.registerUser(firstName, lastName, email, password)  
+    this.registerService.registerUser(req.body)  
 
   }
 } 

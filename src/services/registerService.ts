@@ -12,18 +12,22 @@ export class RegisterService {
   //Generics are compound types that consist of a base type and a custom type. We bring the base Model<> 
   //from mongoose and then add our own User interface that we defined in the userModel file. 
 
-  async registerUser(firstName: string, lastName: string, email: string, password: string): Promise<User> {  
+  async registerUser(input): Promise<User> {  
 
-    const newUser = new this.userModel({   
+        console.log(input)
+
+        const { firstName, lastName, email, password} = input
+
+        const newUser = new this.userModel({   
         firstName,
         lastName,
         email,
         password
-    })
+        })
 
-    const result = await newUser.save();
-    console.log(result)
-    return result
+        const result = await newUser.save();
+        console.log(result)
+        return result
 
   }
 

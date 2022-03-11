@@ -9,8 +9,6 @@ export class LoginService {
     return 'Hello World!';               
   }
 
-  
-
   getHi(): string {
     return 'Hi world';    
   }

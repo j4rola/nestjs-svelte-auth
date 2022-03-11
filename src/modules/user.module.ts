@@ -11,9 +11,11 @@ import { RegisterService } from 'src/services/registerService';
 
 @Module({                     
 
-    imports: [MongooseModule.forFeature([{name: 'User', schema: UserSchema}])],  
+    imports: [MongooseModule.forFeature([{name: 'User', schema: UserSchema }])],  
     controllers: [LoginController, RegisterController], 
-    providers: [RegisterService, LoginService] 
+    providers: [RegisterService, LoginService],  
+    exports: [RegisterService]   
+    
 
 }) 
 

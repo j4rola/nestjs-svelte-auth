@@ -12,7 +12,7 @@ export class AppController {
 
   @Post()
   postRequest(): string {
-    return 'posted'
+    return 'posted' 
   }
 
 
